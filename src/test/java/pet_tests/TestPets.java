@@ -114,11 +114,22 @@ public class TestPets extends TestPetsHelper {
                 .toString();
 
         // Send request with authorization
-        CloseableHttpResponse response = createNewPet(api_key,jsonPet);
+        CloseableHttpResponse response = updatePet(api_key,jsonPet);
         Assert.assertEquals(getStatusCodeFromResponse(response),200);
         Assert.assertEquals(getPetStatus(response),"sold");
     }
 
+    @Test (priority = 5)
+    public void testDeletePet_byId() throws IOException {
+        CloseableHttpResponse response = deletePet_byId(id,api_key);
+        int response_statusCode = getStatusCodeFromResponse(response);
+        Assert.assertEquals(response_statusCode, 200);
 
+        CloseableHttpResponse verifyResponse = getPet_byId(Integer.parseInt(id), api_key);
+        int verify_statusCode = getStatusCodeFromResponse(verifyResponse);
+        System.out.println("Verify status code is ---> " + verify_statusCode + ". The item deleted successfully");
+        Assert.assertEquals(verify_statusCode,404);
+
+    }
 
 }

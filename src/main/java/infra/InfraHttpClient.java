@@ -1,10 +1,7 @@
 package infra;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
+import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -23,6 +20,7 @@ public class InfraHttpClient
     private static HttpGet httpGet;
     private static HttpPost httpPost;
     private static HttpPut httpPut;
+    private static HttpDelete httpDelete;
     private static HttpResponse httpResponse;
 
 
@@ -77,13 +75,20 @@ public class InfraHttpClient
     }
 
     // Execute PUT request
-    public static CloseableHttpResponse doPut (String uri, String api_key, String jsonString) throws IOException {
+    public static CloseableHttpResponse doPut_withAuth (String uri, String api_key, String jsonString) throws IOException {
         httpPut = new HttpPut(uri);
         httpPut.setEntity(new StringEntity(jsonString));
         httpPut.setHeader("Accept","application/json");
         httpPut.setHeader("Content-type","application/json");
         httpPut.setHeader("api_key",api_key);
         return httpClient.execute(httpPut);
+    }
+
+    // Execute DELETE request
+    public static CloseableHttpResponse doDeletePet_byId (String uri, String api_key) throws IOException {
+        httpDelete = new HttpDelete(uri);
+        httpDelete.setHeader("api_key",api_key);
+        return httpClient.execute(httpDelete);
     }
 
 

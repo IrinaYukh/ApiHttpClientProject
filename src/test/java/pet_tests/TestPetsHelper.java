@@ -17,10 +17,16 @@ public class TestPetsHelper extends BaseTest {
     private static String URI_PETS_ByID = Config.baseConfig.api.GET_pet_byID;
     private static String URI_PETS_ByStatus = Config.baseConfig.api.GET_pets_byStatus;
     private static String URI_POST_NewPet = Config.baseConfig.api.POST_newPet;
+    private static String URI_PUT_Pet = Config.baseConfig.api.PUT_updatePet;
+    private static String URI_DELETE_PetById = Config.baseConfig.api.DELETE_pet_byID;
 
     public static CloseableHttpResponse getPet_byId(int id, String api_key) throws IOException
     {
         return doGet_withAuth(URI_PETS_ByID+id, api_key);
+    }
+
+    public static CloseableHttpResponse deletePet_byId(String id, String api_key) throws IOException {
+        return doDeletePet_byId(URI_DELETE_PetById+id, api_key);
     }
 
     public static CloseableHttpResponse getPets_byStatus(String key, String value, String apiKey) throws IOException, URISyntaxException
@@ -29,8 +35,12 @@ public class TestPetsHelper extends BaseTest {
     }
 
     public static CloseableHttpResponse createNewPet(String api_key, String jsonString) throws IOException {
-        System.out.println(jsonString);
+//        System.out.println(jsonString);
         return doPost_withAuth(URI_POST_NewPet,api_key,jsonString);
+    }
+
+    public static CloseableHttpResponse updatePet(String api_key, String jsonString) throws IOException {
+        return doPut_withAuth(URI_PUT_Pet,api_key,jsonString);
     }
 
     // Verify successful new Pet creation by key -> id

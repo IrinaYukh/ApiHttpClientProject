@@ -4,6 +4,7 @@
     "GET_pet_byID": "http://petstore.swagger.io/v2/pet/",
     "GET_pets_byStatus": "http://petstore.swagger.io/v2/pet/findByStatus",
     "POST_newPet": "http://petstore.swagger.io/v2/pet",
-    "PUT_updatePet": "http://petstore.swagger.io/v2/pet"
+    "PUT_updatePet": "http://petstore.swagger.io/v2/pet",
+    "DELETE_pet_byID": "http://petstore.swagger.io/v2/pet/"
   }
 }
