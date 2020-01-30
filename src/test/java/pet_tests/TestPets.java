@@ -17,8 +17,8 @@ public class TestPets extends TestPetsHelper {
 
     // Create test variables for request
     public static final String api_key = Config.baseConfig.api.api_key;
-    public static final String id = TestDataCreator.getPet_ID();
-    public static final String name = TestDataCreator.getPet_name("Browne");
+    public static final String id = TestPets_DataCreator.getPet_ID();
+    public static final String name = TestPets_DataCreator.getPet_name("Browne");
 
     @Test(priority = 1)
     public void testPost_newPet() throws IOException {

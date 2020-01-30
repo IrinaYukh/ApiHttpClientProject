@@ -14,11 +14,11 @@ import static infra.ParsingHelper.*;
 
 public class TestPetsHelper extends BaseTest {
 
-    private static String URI_PETS_ByID = Config.baseConfig.api.GET_pet_byID;
-    private static String URI_PETS_ByStatus = Config.baseConfig.api.GET_pets_byStatus;
-    private static String URI_POST_NewPet = Config.baseConfig.api.POST_newPet;
-    private static String URI_PUT_Pet = Config.baseConfig.api.PUT_updatePet;
-    private static String URI_DELETE_PetById = Config.baseConfig.api.DELETE_pet_byID;
+    private static String URI_PETS_ByID = Config.baseConfig.pet.GET_pet_byID;
+    private static String URI_PETS_ByStatus = Config.baseConfig.pet.GET_pets_byStatus;
+    private static String URI_POST_NewPet = Config.baseConfig.pet.POST_newPet;
+    private static String URI_PUT_Pet = Config.baseConfig.pet.PUT_updatePet;
+    private static String URI_DELETE_PetById = Config.baseConfig.pet.DELETE_pet_byID;
 
     public static CloseableHttpResponse getPet_byId(int id, String api_key) throws IOException
     {

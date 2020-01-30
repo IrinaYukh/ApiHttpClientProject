@@ -1,10 +1,19 @@
 {
   "api": {
-    "api_key": "123456",
+    "api_key": "123456"
+  },
+  "pet": {
     "GET_pet_byID": "http://petstore.swagger.io/v2/pet/",
     "GET_pets_byStatus": "http://petstore.swagger.io/v2/pet/findByStatus",
     "POST_newPet": "http://petstore.swagger.io/v2/pet",
     "PUT_updatePet": "http://petstore.swagger.io/v2/pet",
     "DELETE_pet_byID": "http://petstore.swagger.io/v2/pet/"
+  },
+  "store": {
+    "GET_storeOrder_byId": "https://petstore.swagger.io/v2/store/order/"
+
+  },
+  "user": {
+
   }
 }

@@ -5,6 +5,9 @@ import com.google.gson.Gson;
 public class BaseConfig {
 
     public APIConfig api = new APIConfig();
+    public PetConfig pet = new PetConfig();
+    public StoreConfig store = new StoreConfig();
+    public UserConfig user = new UserConfig();
 
     static String projectPath = System.getProperty("user.dir");
 

@@ -1,6 +1,6 @@
 package pet_tests;
 
-public class TestDataCreator
+public class TestPets_DataCreator
 {
     public static int random = (int) (Math.random()*100);
     public static String baseID = "300";
