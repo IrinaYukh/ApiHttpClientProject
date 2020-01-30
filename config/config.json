@@ -10,8 +10,9 @@
     "DELETE_pet_byID": "http://petstore.swagger.io/v2/pet/"
   },
   "store": {
-    "GET_storeOrder_byId": "https://petstore.swagger.io/v2/store/order/"
-
+    "GET_storeOrder_byId": "https://petstore.swagger.io/v2/store/order/",
+    "POST_newOrder": "https://petstore.swagger.io/v2/store/order",
+    "DELETE_order_byOrderId": "https://petstore.swagger.io/v2/store/order/"
   },
   "user": {
 
